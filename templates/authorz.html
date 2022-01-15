@@ -1,0 +1,12 @@
+{% extends 'base1.html' %}
+{%block title%} {{data.author.name}} {%endblock %}
+{% block content %}
+
+<br>{{data.author.info}}</br>
+Статьи:
+{% for article in articles %}
+{%if article.author == data.author%}
+ <li><br><a href="{% url 'article_url' article.id %}">{{article.name}}</a> </br></li>
+{%endif%}
+{%endfor%}
+{% endblock %}

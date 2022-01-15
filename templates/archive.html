@@ -1,0 +1,18 @@
+{% extends 'base1.html' %}
+{%block title%} Архив {%endblock %}
+{% block content %}
+    {%for release in releases%}
+    <ul>
+        <li>Выпуск №: {{release.quantity}}
+            <ol>
+            {%for article in articles%}
+            {%if article.release == release%}
+            <li><br><a href="{% url 'article_url' article.id %}">{{article.name}}</a> </br>
+            </li>
+            {%endif%}
+            {%endfor%}
+        </ol>
+        </li>
+    </ul>
+    {%endfor%}
+{% endblock %}

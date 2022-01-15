@@ -1,0 +1,13 @@
+{% extends 'baseglvrd.html' %}
+{%block title%} Новый раздел {%endblock %}
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+<p>
+<label>Новый раздел</label><br>
+<p>       Номер Выпуска <input type="text" name="number_rel"/></p>
+<p>Актуальность выпуска <input type="text" name="actual_rel" value="0" /></p>
+</p>
+<input type="submit" class="btn btn-warning" value="Сохранить" >
+</form>
+{% endblock %}

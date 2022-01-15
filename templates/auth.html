@@ -1,0 +1,9 @@
+{% extends 'base1.html' %}
+{%block title%} Вход {%endblock %}
+{% block content %}
+<li><br><a href="{% url 'glvrd_url' %}">glvrd</a> </br> </li>
+ {%for author in authors%}
+        <li><br><a href="{% url 'author_url' author.id %}">{{author.name}}</a> </br> </li>
+    {%endfor%}
+
+{% endblock %}

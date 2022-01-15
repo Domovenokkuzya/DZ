@@ -1,0 +1,17 @@
+{% extends 'baseglvrd.html' %}
+{%block title%} Личный кабинет главного редактора{%endblock %}
+
+
+{% block content %}
+Выпуски:
+{%for release in releases%}
+    <ul>
+        <li>Выпуск №: <a href="{% url 'release_url' release.id %}"> {{release.quantity}} </a>
+        </li>
+    </ul>
+{% endfor %}
+<div class="block2">
+    <p><input type="button" class="btn btn-warning" value="Создать новый выпуск" style="width: 300px;" onclick="window.location='new/'"></p>
+   <p><input type="button" class="btn btn-warning" value="Добавить нового автора" style="width: 300px;" onclick="window.location='createnewauthor/'"></p>
+</div>
+{% endblock %}

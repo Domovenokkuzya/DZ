@@ -1,0 +1,12 @@
+{% extends 'baseglvrd.html' %}
+{%block title%} Выпуск {%endblock %}
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+<p>
+<label>Актуальность выпуска</label><br>
+<input type="text" name="name" value="{{release.actual}}" />
+</p>
+<input type="submit" class="btn btn-warning" value="Сохранить" >
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'baseauthor.html' %}
+{%block title%} Новая статья{%endblock %}
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+<p>
+<label>Новая статья</label><br>
+    <p></p>Название: <input type="text" name="name" />
+<p></p>Текст: <input type="text" name="text"  class="resizedTextbox"/>
+<p></p>Жанр: <input type="text" name="genre" />
+<p></p>Выпуск: <input type="text" name="release" />
+
+
+</p>
+<input type="submit" class="btn btn-warning" value="Сохранить" >
+</form>
+{% endblock %}

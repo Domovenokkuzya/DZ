@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block title%} Журнал. Выпуск№  {% for release in releases %}{% if release.actual == 1 %} {{release.quantity}}{% endif %}{% endfor %} {%endblock %}
+{% block content %}
+<div class="block1">
+    <img src='https://yt3.ggpht.com/ytc/AAUvwnh-VVmJhHggZzDBWSMHgrjaTTj8jacYMEvYvOl4=s200-c-k-c0x00ffffff-no-rj'>
+    Вы можете любить нас или ненавидеть так сильно, как вам хочется
+    <button type="button" class="btn-rounded" onclick="window.location='/auth'"> Вход</button>
+</div>
+
+<div class="articles">
+    {% for release in releases %}
+    {% if release.actual == 1 %}
+    {% for article in ar/ticles %}
+    {% for author in authors %}
+    {% if article.release == release %}
+    {% if article.author == author %}
+    <button type="button" class="btn-rounded" style="width: 300px;" onclick="window.location='{% url 'article_url' article.id %}'">{{article.name}}   {{author.name}}</button>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+</div>
+
+<div class="block2">
+   <p><input type="button" class="btn btn-warning" value="Наши авторы" style="width: 300px;" onclick="window.location='/our_authors'"></p>
+    <p><input type="button" class="btn btn-warning" value="Архив" style="width: 300px;" onclick="window.location='/archive'"></p>
+</div>
+
+{% endblock %}

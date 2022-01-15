@@ -1,0 +1,47 @@
+{% extends 'baseA.html' %}
+{%block title%} {{data.article.name}} {%endblock %}
+{% block content %}
+<b>{{data.article.name}}</b>
+
+{% if data.article.genre_id == 1 %}
+<div class="block1">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 2 %}
+<div class="block2">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 3 %}
+<div class="block3">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 4 %}
+<div class="block4">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 5 %}
+<div class="block5">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 6 %}
+<div class="block6">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 7 %}
+<div class="block7">
+{{data.article.text}}
+</div>
+
+{% elif data.article.genre_id == 8 %}
+<div class="block8">
+{{data.article.text}}
+</div>
+
+{% endif %}
+{% endblock %}
